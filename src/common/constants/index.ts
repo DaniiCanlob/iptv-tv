@@ -7,3 +7,4 @@ export * from './keys';
 export * from './storage';
 export * from './volume';
 export * from './playback';
+export * from './app';

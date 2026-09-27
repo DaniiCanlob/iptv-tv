@@ -1,5 +1,5 @@
 import { Globe, Star, Tv } from 'lucide-react';
-import { FILTER_ALL, FILTER_FAVORITES } from '../../common/constants';
+import { APP_VERSION, FILTER_ALL, FILTER_FAVORITES } from '../../common/constants';
 import type { SidebarProps } from '../../common/types';
 import { SidebarItem } from './SidebarItem';
 
@@ -44,6 +44,7 @@ export function Sidebar({ categories, totalCount, favoritesCount, selected, onSe
           />
         ))}
       </nav>
+      <p className="border-t border-tv-line px-6 py-3 text-xs text-tv-muted tabular-nums">Versión {APP_VERSION}</p>
     </aside>
   );
 }
