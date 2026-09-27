@@ -2,7 +2,7 @@
   "name": "iptv-tv",
   "productName": "IPTV TV",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Canales de TV del mundo (lista pública de iptv-org) con navegación por control remoto.",
   "author": {
     "name": "Jesús Daniel Cantillo Lobo"
