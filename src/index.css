@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tv-bg: #07090f;
+  --color-tv-surface: #111522;
+  --color-tv-surface-2: #1a2033;
+  --color-tv-line: #252c42;
+  --color-tv-accent: #38bdf8;
+  --color-tv-accent-strong: #0ea5e9;
+  --color-tv-muted: #8b93a7;
+  --color-tv-live: #ef4444;
+  --color-tv-star: #facc15;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-tv-bg font-sans text-white antialiased select-none;
+  overflow: hidden;
+}
+
+*:focus {
+  outline: none;
+}

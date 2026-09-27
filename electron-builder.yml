@@ -1,0 +1,57 @@
+# Installers for Windows, macOS and Linux + auto-update feed on GitHub Releases.
+# `repository` in package.json (github:owner/repo) decides where releases are published.
+appId: com.danii.iptvtv
+productName: IPTV TV
+executableName: iptv-tv
+copyright: Copyright © 2026 Jesús Daniel Cantillo Lobo
+
+directories:
+  output: release
+  buildResources: build
+
+# React build + Electron bundle; runtime dependency electron-updater is added automatically.
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - package.json
+
+publish:
+  provider: github
+  # Publish right away (not as a draft) so installed apps see the update.
+  releaseType: release
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  artifactName: IPTV-TV-Setup-${version}.${ext}
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: IPTV TV
+
+mac:
+  category: public.app-category.entertainment
+  # Unsigned (no paid Apple Developer ID): users open it with right click → Open.
+  identity: null
+  target:
+    - target: dmg
+      arch: [universal]
+    - target: zip
+      arch: [universal]
+  artifactName: IPTV-TV-${version}-mac.${ext}
+
+linux:
+  category: AudioVideo
+  # Links the running window to the .desktop entry (taskbar icon/grouping).
+  syncDesktopName: true
+  maintainer: Jesús Daniel Cantillo Lobo
+  synopsis: Canales de TV del mundo
+  target:
+    - AppImage
+    - deb
+  artifactName: IPTV-TV-${version}-${arch}.${ext}

@@ -1,0 +1,11 @@
+# pnpm 11 settings (pnpm no longer reads them from package.json or .npmrc).
+
+# electron-builder needs a flat node_modules to package the app.
+nodeLinker: hoisted
+
+# Dependencies allowed to run install scripts.
+allowBuilds:
+  # Downloads the Electron binary for your system.
+  electron: true
+  # Only used by the Squirrel.Windows target; this app builds NSIS installers.
+  electron-winstaller: false

@@ -1,0 +1,44 @@
+{
+  "name": "iptv-tv",
+  "productName": "IPTV TV",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Canales de TV del mundo (lista pública de iptv-org) con navegación por control remoto.",
+  "author": {
+    "name": "Jesús Daniel Cantillo Lobo"
+  },
+  "license": "MIT",
+  "repository": "github:DaniiCanlob/iptv-tv",
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "desktopName": "iptv-tv.desktop",
+  "scripts": {
+    "dev": "vite --host",
+    "dev:desktop": "node scripts/dev-desktop.mjs",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.electron.json",
+    "build": "tsc --noEmit && vite build",
+    "build:desktop": "npm run typecheck && vite build && node scripts/build-electron.mjs",
+    "dist": "npm run build:desktop && electron-builder --publish never",
+    "release": "npm run build:desktop && electron-builder --publish always",
+    "preview": "vite preview --host"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3",
+    "hls.js": "^1.7.3",
+    "lucide-react": "^1.48.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1"
+  }
+}
